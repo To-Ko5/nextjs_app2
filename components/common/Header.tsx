@@ -1,17 +1,20 @@
+import React from 'react'
 import Link from 'next/link'
 import {
   Box,
   Flex,
   Heading,
   useColorMode,
-  useDisclosure,
   Button,
-  IconButton
+  useDisclosure
 } from '@chakra-ui/react'
-import React from 'react'
+
+import MenuButton from './buttons/MenuButton'
+import { MenuDrawer } from './DrawerMenu'
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <header>
       <Flex
@@ -44,7 +47,12 @@ const Header = () => {
         <Button onClick={toggleColorMode}>
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
+        <MenuButton onOpen={onOpen}/>
       </Flex>
+      <MenuDrawer
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </header>
   )
 }
