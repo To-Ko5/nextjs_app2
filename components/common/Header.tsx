@@ -14,7 +14,7 @@ import { MenuDrawer } from './DrawerMenu'
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <header>
       <Flex
@@ -37,7 +37,7 @@ const Header = () => {
           flexGrow={2}
         >
           <Box pr={4}>
-            <Link href="/">ユーザー一覧</Link>
+            <Link href="/user-management">ユーザー一覧</Link>
           </Box>
           <Box>
             <Link href="/login">設定</Link>
@@ -47,12 +47,9 @@ const Header = () => {
         <Button onClick={toggleColorMode}>
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
-        <MenuButton onOpen={onOpen}/>
+        <MenuButton onOpen={onOpen} />
       </Flex>
-      <MenuDrawer
-        isOpen={isOpen}
-        onClose={onClose}
-      />
+      <MenuDrawer isOpen={isOpen} onClose={onClose} />
     </header>
   )
 }
