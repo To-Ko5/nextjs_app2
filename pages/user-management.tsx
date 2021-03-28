@@ -1,12 +1,5 @@
-import { memo, useCallback, useEffect, VFC } from 'react'
-
-import {
-  Center,
-  Spinner,
-  useDisclosure,
-  Wrap,
-  WrapItem
-} from '@chakra-ui/react'
+import { useCallback } from 'react'
+import { useDisclosure, Wrap, WrapItem } from '@chakra-ui/react'
 
 import Layout from '../components/Layout'
 import UserCard from '../components/users/UserCard'
