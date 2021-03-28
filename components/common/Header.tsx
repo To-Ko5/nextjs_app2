@@ -40,7 +40,7 @@ const Header = () => {
             <Link href="/user-management">ユーザー一覧</Link>
           </Box>
           <Box>
-            <Link href="/login">設定</Link>
+            <Link href="/login">ログイン</Link>
           </Box>
         </Flex>
 
